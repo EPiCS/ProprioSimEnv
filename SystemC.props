@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SYSTEMC>C:\Users\rmtdjaba\Desktop\systemc-2.3.0\msvc80</SYSTEMC>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ExecutablePath>C:\Users\rmtdjaba\Documents\Visual Studio 2012\Projects\ProprioSimEnv\ProprioSimEnv\src;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>C:\systemc-2.3.0\src;C:\Users\rmtdjaba\Documents\Visual Studio 2012\Projects\ProprioSimEnv\ProprioSimEnv\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\systemc-2.3.0\msvc80\SystemC\Debug;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SYSTEMC)\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100;4127;4267;4505;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <WarningLevel>Level2</WarningLevel>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>systemc.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="SYSTEMC">
+      <Value>$(SYSTEMC)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
